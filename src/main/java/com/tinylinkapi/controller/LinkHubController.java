@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("linkhub")
@@ -26,8 +27,14 @@ public class LinkHubController {
 
     @GetMapping
     public List<LinkHub> show(LinkHub linkHub ){
-        List<LinkHub> links = this.linkHubService.show(linkHub);
-        return links;
+        List<LinkHub> list = this.linkHubService.show(linkHub);
+        return list;
+    }
+
+    @GetMapping("{id}")
+    public Optional<LinkHub> showId(@PathVariable("id") Long id){
+        Optional<LinkHub> listId = this.linkHubService.showId(id);
+        return  listId;
     }
 
 
