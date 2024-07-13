@@ -37,7 +37,6 @@ public class LinkHubController {
         return  listId;
     }
 
-
     @PutMapping
     public List<LinkHub> save(@RequestBody  LinkHub linkHub){
         return linkHubService.update(linkHub);

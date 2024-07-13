@@ -48,12 +48,9 @@ public class LinkHubService {
         return this.linkHubRepository.findAll();
     }
 
-
     public Optional<LinkHub> showId(Long id) {
         return this.linkHubRepository.findById(id);
     }
-
-
 
     public List<LinkHub> update(LinkHub linkHub) {
         return Collections.singletonList(linkHubRepository.save(linkHub));
