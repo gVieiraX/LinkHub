@@ -4,24 +4,28 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "usuario")
-public class TinyLink {
+public class LinkHub {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String sobrenome;
     private String cargo;
-    private String url_portfolio;
+    private String urlPortfolio; // Corrigido para urlPortfolio
     private String email;
 
 
-    public TinyLink(String nome, String sobrenome, String cargo, String url_portfolio, String email) {
+    public LinkHub() {
+    }
+
+    public LinkHub(String nome, String sobrenome, String cargo, String url_portfolio, String email) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cargo = cargo;
-        this.url_portfolio = url_portfolio;
+        this.urlPortfolio = url_portfolio;
         this.email = email;
     }
+
 
     public Long getId() {
         return id;
@@ -55,12 +59,12 @@ public class TinyLink {
         this.cargo = cargo;
     }
 
-    public String getUrl_portfolio() {
-        return url_portfolio;
+    public String getUrlPortfolio() {
+        return urlPortfolio;
     }
 
-    public void setUrl_portfolio(String url_portfolio) {
-        this.url_portfolio = url_portfolio;
+    public void setUrlPortfolio(String urlPortfolio) {
+        this.urlPortfolio = urlPortfolio;
     }
 
     public String getEmail() {
